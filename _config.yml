@@ -82,8 +82,8 @@ use_date_for_updated: true
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
-exclude: 
-ignore: 
+exclude:
+ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -91,45 +91,7 @@ ignore:
 theme: 0218
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
-
-# hexo-generator-json-content
-jsonContent:
-  meta: true
-  drafts: false
-  file: content.json
-  keywords: undefined
-  pages:
-    title: true
-    slug: false
-    date: true
-    updated: true
-    comments: false
-    path: true
-    link: false
-    permalink: true
-    excerpt: false
-    keywords: false
-    text: false
-    raw: false
-    content: false
-    author: false
-  posts:
-    title: true
-    slug: false
-    date: true
-    updated: true
-    comments: false
-    path: true
-    link: false
-    permalink: true
-    excerpt: false
-    keywords: false
-    text: false
-    raw: false
-    content: false
-    author: false
-    categories: true
-    tags: true
+  type: git
+  repo: https://github.com/hiro0218/blog.git
+  branch: public
