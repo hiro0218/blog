@@ -29,6 +29,15 @@ const getHeadings = (content) => {
   return excerpt;
 };
 
+const getConduitLinks = (conduit) => {
+  if (!conduit) return {};
+
+  return {
+    title: conduit.title,
+    path: conduit.path,
+  };
+};
+
 hexo.extend.generator.register('posts', (locals) => {
   const posts = locals.posts;
   const data = [];
@@ -45,6 +54,8 @@ hexo.extend.generator.register('posts', (locals) => {
       excerpt: excerpt,
       categories: getTerms(post.categories.data),
       tags: getTerms(post.tags.data),
+      prev: getConduitLinks(post.prev),
+      next: getConduitLinks(post.next),
     });
   });
 
