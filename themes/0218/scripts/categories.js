@@ -11,6 +11,11 @@ hexo.extend.generator.register('categories', (locals) => {
     });
   });
 
+  // sort: 件数順
+  data.sort((a, b) => {
+    return a.count < b.count ? 1 : -1;
+  });
+
   return {
     path: 'categories.json',
     data: JSON.stringify(data),

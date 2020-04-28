@@ -59,6 +59,11 @@ hexo.extend.generator.register('posts', (locals) => {
     });
   });
 
+  // sort: 日付順
+  data.sort((a, b) => {
+    return a.date < b.date ? 1 : -1;
+  });
+
   return {
     path: 'posts.json',
     data: JSON.stringify(data),
