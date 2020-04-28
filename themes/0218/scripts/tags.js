@@ -11,6 +11,11 @@ hexo.extend.generator.register('tags', (locals) => {
     });
   });
 
+  // sort: 件数順
+  data.sort((a, b) => {
+    return a.count < b.count ? 1 : -1;
+  });
+
   return {
     path: 'tags.json',
     data: JSON.stringify(data),

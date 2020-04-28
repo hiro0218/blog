@@ -21,6 +21,11 @@ const getTermsPosts = (terms) => {
     }
   }
 
+  // sort: 件数順
+  data.sort((a, b) => {
+    return a.count < b.count ? 1 : -1;
+  });
+
   return data;
 };
 
