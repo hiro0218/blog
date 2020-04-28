@@ -94,6 +94,8 @@ use_date_for_updated: true
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 exclude:
+  - package.json
+  - yarn.lock
 ignore:
 
 # Extensions
@@ -106,5 +108,3 @@ deploy:
   type: git
   repo: https://github.com/hiro0218/blog.git
   branch: public
-  ignore_pattern:
-      public: lock
