@@ -1,3 +1,5 @@
+const utils = require('./modules/utils');
+
 const getTermsPosts = (terms) => {
   const data = [];
 
@@ -17,6 +19,7 @@ const getTermsPosts = (terms) => {
       data[i].posts.push({
         title: post.title,
         path: encodeURI(post.path),
+        excerpt: utils.getHeadings(post.content),
       });
     }
   }
