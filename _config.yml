@@ -99,6 +99,7 @@ exclude:
 ignore:
 
 # Sitemap
+## https://www.npmjs.com/package/hexo-generator-seo-friendly-sitemap
 sitemap:
   path: sitemap.xml
 
