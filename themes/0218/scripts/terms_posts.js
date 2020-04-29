@@ -16,10 +16,17 @@ const getTermsPosts = (terms) => {
 
     for (let j = 0; j < posts.length; j++) {
       const post = posts.data[j];
+
       data[i].posts.push({
         title: post.title,
         path: encodeURI(post.path),
         excerpt: utils.getHeadings(post.content),
+        date: post.updated.toDate().toISOString(),
+      });
+
+      // sort: 日付順
+      data[i].posts.sort((a, b) => {
+        return a.date < b.date ? 1 : -1;
       });
     }
   }
