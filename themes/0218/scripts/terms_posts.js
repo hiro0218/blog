@@ -21,10 +21,9 @@ const getTermsPosts = (terms) => {
         title: post.title,
         path: encodeURI(post.path),
         excerpt: utils.getHeadings(post.content),
-        date: post.updated.toDate().toISOString(),
+        date: post.date.toDate().toISOString(),
       });
 
-      // sort: 日付順
       data[i].posts.sort((a, b) => {
         return a.date < b.date ? 1 : -1;
       });
