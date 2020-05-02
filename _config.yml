@@ -136,4 +136,4 @@ theme: 0218
 deploy:
   type: git
   repo: https://github.com/hiro0218/blog.git
-  branch: public
+  branch: gh-pages
