@@ -120,6 +120,13 @@ feed:
     enable: true
     output: "feed.json"
 
+# Robots.txt
+## https://www.npmjs.com/package/hexo-generator-robotstxt
+robotstxt:
+  useragent: "*"
+  disallow:
+    - /
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
