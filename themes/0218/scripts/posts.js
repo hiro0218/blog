@@ -28,15 +28,14 @@ hexo.extend.generator.register('posts', (locals) => {
   const data = [];
 
   posts.forEach((post) => {
-    const excerpt = utils.getHeadings(post.content);
-
     data.push({
       title: post.title,
       path: post.path,
       permalink: encodeURI(post.permalink),
       date: post.date.toDate().toISOString(),
       updated: post.updated.toDate().toISOString(),
-      excerpt: excerpt,
+      thumbnail: utils.getThumbnail(post.content),
+      excerpt: utils.getHeadings(post.content),
       categories: getTerms(post.categories.data),
       tags: getTerms(post.tags.data),
       prev: getConduitLinks(post.prev),
