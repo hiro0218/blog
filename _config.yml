@@ -137,3 +137,5 @@ deploy:
   type: git
   repo: https://github.com/hiro0218/blog.git
   branch: gh-pages
+  name: hiro0218
+  email: hiro0218@gmail.com
