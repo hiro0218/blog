@@ -135,7 +135,7 @@ theme: 0218
 # Deployment
 deploy:
   type: git
-  repo: git@github.com:hiro0218/blog.github.io.git
+  repo: git@github.com:hiro0218/hiro0218.github.io.git
   branch: gh-pages
   name: hiro0218
   email: hiro0218@gmail.com
