@@ -20,8 +20,8 @@ jobs:
       id: deploy
       uses: sma11black/hexo-action@v1.0.1
       with:
-        user_name: hiro0218
-        user_email: hiro0218@gmail.com
+        user_name: "hiro0218"
+        user_email: "hiro0218@gmail.com"
         deploy_key: ${{ secrets.DEPLOY_KEY }}
         commit_msg: ${{ github.event.head_commit.message }}
     # Use the output from the `deploy` step(use for test action)
