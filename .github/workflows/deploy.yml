@@ -19,7 +19,7 @@ jobs:
 
     # Deploy hexo blog website.
     - name: Deploy
-      uses: yrpang/github-actions-hexo@master
+      uses: yrpang/github-actions-hexo@v1.1
         with:
           deploykey: ${{secrets.DEPLOY_KEY}}
           username: 'hiro0218'
