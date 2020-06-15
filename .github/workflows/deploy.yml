@@ -17,6 +17,9 @@ jobs:
       with:
         submodules: true # Checkout private submodules(themes or something else).
 
+    - name: Update Submodules
+      run: git submodule update --remote
+
     - name: Install Dependencies
       run: yarn
 
