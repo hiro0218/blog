@@ -1,3 +1,5 @@
 [submodule "source"]
 	path = source
 	url = https://github.com/hiro0218/article.git
+        ignore = dirty
+
