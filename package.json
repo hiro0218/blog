@@ -27,6 +27,7 @@
     "@hiro0218/prettier-config": "^1.0.2",
     "eslint": "^7.3.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "fs-extra": "^9.0.1",
     "node-html-to-image": "git+https://github.com/frinyvonnick/node-html-to-image.git",
     "prettier": "2.0.5"
   }

@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const utils = require('./modules/utils');
 const generateOgpImage = require('./modules/ogp');
@@ -35,7 +35,7 @@ const makeOgpDir = () => {
   } catch (error) {
     if (error.code === 'ENOENT') {
       // ディレクトリを作成
-      fs.mkdirSync(path.resolve(ogpDirectoryPath));
+      fs.mkdirsSync(path.resolve(ogpDirectoryPath));
     }
   }
 };
