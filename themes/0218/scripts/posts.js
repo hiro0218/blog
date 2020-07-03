@@ -1,4 +1,5 @@
 const utils = require('./modules/utils');
+const generateOgpImage = require('./modules/ogp');
 
 const getTerms = (terms) => {
   const data = [];
@@ -26,8 +27,14 @@ const getConduitLinks = (conduit) => {
 hexo.extend.generator.register('posts', (locals) => {
   const posts = locals.posts;
   const data = [];
+  const ogpImages = [];
 
   posts.forEach((post) => {
+    ogpImages.push({
+      title: post.title,
+      output: `./public/images/ogp/${post.slug}.png`,
+    });
+
     data.push({
       title: post.title,
       path: post.path,
@@ -42,6 +49,9 @@ hexo.extend.generator.register('posts', (locals) => {
       next: getConduitLinks(post.next),
     });
   });
+
+  // OGP image を生成
+  generateOgpImage(ogpImages);
 
   // sort: 日付順
   data.sort((a, b) => {
