@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const utils = require('./modules/utils');
 const generateOgpImage = require('./modules/ogp');
 
@@ -24,15 +26,31 @@ const getConduitLinks = (conduit) => {
   };
 };
 
+const ogpDirectoryPath = './public/images/ogp';
+
+const makeOgpDir = () => {
+  try {
+    // 対象のディレクトリが存在するか
+    fs.statSync(ogpDirectoryPath);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // ディレクトリを作成
+      fs.mkdirSync(path.resolve(ogpDirectoryPath));
+    }
+  }
+};
+
 hexo.extend.generator.register('posts', (locals) => {
   const posts = locals.posts;
   const data = [];
   const ogpImages = [];
 
+  makeOgpDir();
+
   posts.forEach((post) => {
     ogpImages.push({
       title: post.title,
-      output: `./public/images/ogp/${post.slug}.png`,
+      output: `${ogpDirectoryPath}/${post.slug}.png`,
     });
 
     data.push({
