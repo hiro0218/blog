@@ -6,7 +6,7 @@ on:
     branches:
       - master
   push:
-    branches: 
+    branches:
       - master
   schedule:
     - cron: '0 */6 * * *'
@@ -26,6 +26,11 @@ jobs:
 
     - name: Install Dependencies
       run: yarn
+
+    - name: Prepare Deploy
+      run: |
+        yarn clean
+        yarn build
 
     # Deploy hexo blog website.
     - name: Deploy
