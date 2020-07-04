@@ -27,6 +27,11 @@ jobs:
     - name: Install Dependencies
       run: yarn
 
+    - name: Prepare Deploy
+      run: |
+        yarn claen
+        yarn build
+
     # Deploy hexo blog website.
     - name: Deploy
       uses: yrpang/github-actions-hexo@v1.1
