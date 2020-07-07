@@ -14,22 +14,27 @@ module.exports = async function (content) {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 1em 2em;
+          padding: 1em 8vw;
           font-family: 'NotoSansJP', sans-serif;
+          background: #fff;
         }
         .title {
           margin: 0;
           color: #212529;
-          font-size: 1.85em;
+          font-size: 5vw;
           line-height: 1.75;
+          text-align: center;
+          word-break: break-word;
         }
         .url {
           position: absolute;
-          right: 1em;
+          right: auto;
+          left: auto;
           bottom: 1em;
           z-index: 1;
           color: #343a40;
-          font-size: 1em;
+          font-size: 2.5vw;
+          font-family: sans-serif;
         }
       </style>
     </head>
@@ -42,8 +47,8 @@ module.exports = async function (content) {
     content: content,
     puppeteerArgs: {
       defaultViewport: {
-        width: 600,
-        height: 315,
+        width: 1200,
+        height: 630,
       },
     },
   }).then(() => console.log('OGP Image Generated.'));
