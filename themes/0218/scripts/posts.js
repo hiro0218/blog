@@ -60,6 +60,7 @@ hexo.extend.generator.register('posts', (locals) => {
       date: post.date.toDate().toISOString(),
       updated: post.updated.toDate().toISOString(),
       thumbnail: utils.getThumbnail(post.content),
+      content: post.content,
       excerpt: utils.getHeadings(post.content),
       categories: getTerms(post.categories.data),
       tags: getTerms(post.tags.data),
