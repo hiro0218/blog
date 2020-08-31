@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
+const cheerio = require('cheerio');
 const utils = require('./modules/utils');
 const generateOgpImage = require('./modules/ogp');
 
@@ -53,6 +54,9 @@ hexo.extend.generator.register('posts', (locals) => {
       output: `${ogpDirectoryPath}/${post.slug}.png`,
     });
 
+    // 記事内容をパースする
+    const $ = cheerio.load(post.content);
+
     data.push({
       title: post.title,
       path: post.path,
@@ -60,7 +64,7 @@ hexo.extend.generator.register('posts', (locals) => {
       date: post.date.toDate().toISOString(),
       updated: post.updated.toDate().toISOString(),
       thumbnail: utils.getThumbnail(post.content),
-      content: post.content,
+      content: $('body').html(),
       excerpt: utils.getHeadings(post.content),
       categories: getTerms(post.categories.data),
       tags: getTerms(post.tags.data),
