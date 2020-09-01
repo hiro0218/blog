@@ -137,3 +137,4 @@ deploy:
   branch: gh-pages
   name: hiro0218
   email: hiro0218@gmail.com
+  ignore_pattern: '*.html'
