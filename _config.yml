@@ -57,6 +57,7 @@ marked:
   autolink: true
   sanitizeUrl: false
   headerIds: false
+  lazyload: true
   prependRoot: false
   external_link:
     enable: false
