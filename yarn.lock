@@ -126,20 +126,63 @@
   resolved "https://registry.yarnpkg.com/@hiro0218/prettier-config/-/prettier-config-1.0.2.tgz#5e6901f2910a81ace0470bebef6d4af7800df17c"
   integrity sha512-qKT6pTxbjkLxJrawtKrOv8tOTewNgCXH4uziGnGr6gRBfPjEfx9KlIgoo3eD1Ih6o7df0CjTuTYOirWUQHT6Rg==
 
+"@types/bunyan@*":
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/@types/bunyan/-/bunyan-1.8.6.tgz#6527641cca30bedec5feb9ab527b7803b8000582"
+  integrity sha512-YiozPOOsS6bIuz31ilYqR5SlLif4TBWsousN2aCWLi5233nZSX19tFbcQUPdR7xJ8ypPyxkCGNxg0CIV5n9qxQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
+
+"@types/connect@*":
+  version "3.4.34"
+  resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.34.tgz#170a40223a6d666006d93ca128af2beb1d9b1901"
+  integrity sha512-ePPA/JuI+X0vb+gSWlPKOY0NdNAie/rPUqX2GUPpbZwiKTkSPhjXWuee47E4MtE54QVzGCQMQkAL6JhV2E1+cQ==
+  dependencies:
+    "@types/node" "*"
+
+"@types/hexo-util@*":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@types/hexo-util/-/hexo-util-0.6.2.tgz#c76b5b0155f54105579228c94a8051fa442b3d90"
+  integrity sha512-8dsj6xjGsopvLxBJoDMN9qnulpPh3E4/REAkoExuY+R1vz4cY4xeIAMM62YA8FAZG4mKoF2Cbipqbn85cZEM+w==
+  dependencies:
+    "@types/node" "*"
+
+"@types/hexo@^3.8.5":
+  version "3.8.5"
+  resolved "https://registry.yarnpkg.com/@types/hexo/-/hexo-3.8.5.tgz#4925ed2c1bbb54fb2ab3f222decb753b1e6b5b79"
+  integrity sha512-1t2yxcqcK1u8sgtk0oYulKiQSahB7Nklved5LiiTI343ubDQeITK6Oh1hxqsjXVRfaem3h4inq8NuNKO8Z4NcA==
+  dependencies:
+    "@types/bunyan" "*"
+    "@types/connect" "*"
+    "@types/hexo-util" "*"
+    "@types/minimist" "*"
+    "@types/underscore" "*"
+    moment "^2.19.4"
 
 "@types/mime-types@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@types/mime-types/-/mime-types-2.1.0.tgz#9ca52cda363f699c69466c2a6ccdaad913ea7a73"
   integrity sha1-nKUs2jY/aZxpRmwqbM2q2RPqenM=
 
+"@types/minimist@*":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
+  integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
+
 "@types/node@*":
   version "14.0.14"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.14.tgz#24a0b5959f16ac141aeb0c5b3cd7a15b7c64cbce"
   integrity sha512-syUgf67ZQpaJj01/tRTknkMNoBBLWJOBODF0Zm4NrXmiSuxjymFrxnTu1QVYRubhVkRcZLYZG8STTwJRdVm/WQ==
+
+"@types/underscore@*":
+  version "1.10.24"
+  resolved "https://registry.yarnpkg.com/@types/underscore/-/underscore-1.10.24.tgz#dede004deed3b3f99c4db0bdb9ee21cae25befdd"
+  integrity sha512-T3NQD8hXNW2sRsSbLNjF/aBo18MyJlbw0lSpQHB/eZZtScPdexN4HSa8cByYwTw9Wy7KuOFr81mlDQcQQaZ79w==
 
 "@types/yauzl@^2.9.1":
   version "2.9.1"
@@ -1689,6 +1732,11 @@ moment@2.24.0, "moment@>= 2.9.0", moment@^2.18.0, moment@^2.22.2:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+
+moment@^2.19.4:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
 morgan@^1.9.1:
   version "1.10.0"
