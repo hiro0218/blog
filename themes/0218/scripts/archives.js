@@ -64,7 +64,7 @@ hexo.extend.generator.register('updates_posts', (locals) => {
   });
 
   // 5件絞り込み
-  const posts = data.filter((_, i) => i < 5);
+  const posts = data.filter((value) => value.date.toDate() < value.updated.toDate()).filter((_, i) => i < 5);
 
   return {
     path: 'updates_posts.json',
