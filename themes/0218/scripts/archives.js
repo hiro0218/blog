@@ -1,3 +1,5 @@
+const utils = require('./modules/utils');
+
 hexo.extend.generator.register('archives', (locals) => {
   const data = [];
 
@@ -6,6 +8,7 @@ hexo.extend.generator.register('archives', (locals) => {
       title: post.title,
       date: post.date,
       path: post.path,
+      excerpt: utils.getHeadings(post.content),
     });
   });
 
@@ -29,6 +32,7 @@ hexo.extend.generator.register('recent_posts', (locals) => {
       date: post.date,
       updated: post.updated,
       path: post.path,
+      excerpt: utils.getHeadings(post.content),
     });
   });
 
@@ -55,6 +59,7 @@ hexo.extend.generator.register('updates_posts', (locals) => {
       date: post.date,
       updated: post.updated,
       path: post.path,
+      excerpt: utils.getHeadings(post.content),
     });
   });
 
