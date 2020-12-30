@@ -1,8 +1,5 @@
-const fs = require('fs-extra');
-const path = require('path');
 const cheerio = require('cheerio');
 const utils = require('./modules/utils');
-const generateOgpImage = require('./modules/ogp');
 
 const getTerms = (terms) => {
   const data = [];
@@ -27,33 +24,11 @@ const getConduitLinks = (conduit) => {
   };
 };
 
-const ogpDirectoryPath = './public/images/ogp';
-
-const makeOgpDir = () => {
-  try {
-    // 対象のディレクトリが存在するか
-    fs.statSync(ogpDirectoryPath);
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      // ディレクトリを作成
-      fs.mkdirsSync(path.resolve(ogpDirectoryPath));
-    }
-  }
-};
-
 hexo.extend.generator.register('posts', (locals) => {
   const posts = locals.posts;
   const data = [];
-  const ogpImages = [];
-
-  makeOgpDir();
 
   posts.forEach((post) => {
-    ogpImages.push({
-      title: post.title,
-      output: `${ogpDirectoryPath}/${post.slug}.png`,
-    });
-
     // 記事内容をパースする
     const $ = cheerio.load(post.content);
 
@@ -72,9 +47,6 @@ hexo.extend.generator.register('posts', (locals) => {
       next: getConduitLinks(post.next),
     });
   });
-
-  // OGP image を生成
-  generateOgpImage(ogpImages);
 
   // sort: 日付順
   data.sort((a, b) => {
