@@ -1,9 +1,8 @@
 const nodeHtmlToImage = require('node-html-to-image');
 const fontData = require('./fontdata');
 
-module.exports = async function (content) {
-  nodeHtmlToImage({
-    html: `<html lang="ja">
+const html = () => {
+  return `<html lang="ja">
     <head>
       <style>
         @font-face {
@@ -42,14 +41,19 @@ module.exports = async function (content) {
       <h1 class="title">{{title}}</h1>
       <div class="url">b.0218.jp</div>
     </body>
-  </html>
-  `,
+  </html>`;
+};
+
+module.exports = async function (content) {
+  nodeHtmlToImage({
+    html: html(),
     content: content,
     puppeteerArgs: {
       defaultViewport: {
         width: 1200,
         height: 630,
       },
+      devtools: false,
     },
   }).then(() => console.log('OGP Image Generated.'));
 };
