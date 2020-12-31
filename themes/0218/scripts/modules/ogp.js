@@ -44,7 +44,10 @@ const html = () => {
   </html>`;
 };
 
-module.exports = async function (content) {
+module.exports = function (content) {
+  let numberOfExecutions = 0;
+  const contentLength = content.length;
+
   nodeHtmlToImage({
     html: html(),
     content: content,
@@ -54,6 +57,13 @@ module.exports = async function (content) {
         height: 630,
       },
       devtools: false,
+    },
+    beforeScreenshot: () => {
+      console.log(
+        'OGP Image Generated:',
+        content[numberOfExecutions].output.replace('./public/images/ogp/', ''),
+        `(${++numberOfExecutions}/${contentLength})`,
+      );
     },
   }).then(() => console.log('OGP Image Generated.'));
 };
