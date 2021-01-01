@@ -1,15 +1,21 @@
 const nodeHtmlToImage = require('node-html-to-image');
+const font2base64 = require('node-font2base64');
+const fontData = font2base64.encodeToDataUrlSync('./font/NotoSansCJKjp-Black.min.woff2');
 
 const html = () => {
   return `<html lang="ja">
     <head>
       <style>
+        @font-face {
+          font-family: 'NotoSansJP';
+          src: url(${fontData}) format('woff2');
+        }
         body {
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 1em 8vw;
-          font-family: "Noto Sans CJK JP Black", "Noto Sans JP Black", sans-serif;
+          font-family: "NotoSansJP", sans-serif;
           font-feature-settings: "palt" 1;
           word-wrap: break-word;
           overflow-wrap: break-word;
@@ -28,7 +34,7 @@ const html = () => {
           bottom: 1em;
           z-index: 1;
           color: #868e96;
-          font-family: "Noto Sans CJK JP Light", "Noto Sans JP Light", sans-serif;
+          font-family: sans-serif;
           font-size: 2.5vw;
         }
       </style>
