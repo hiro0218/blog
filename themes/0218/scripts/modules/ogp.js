@@ -1,29 +1,25 @@
 const nodeHtmlToImage = require('node-html-to-image');
-const fontData = require('./fontdata');
 
 const html = () => {
   return `<html lang="ja">
     <head>
       <style>
-        @font-face {
-          font-family: 'NotoSansJP';
-          src: url("data:font/woff;base64,${fontData}");
-        }
         body {
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 1em 8vw;
-          font-family: 'NotoSansJP', sans-serif;
-          background: #fff;
+          font-family: "Noto Sans CJK JP Black", "Noto Sans JP Black", sans-serif;
+          font-feature-settings: "palt" 1;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
         .title {
           margin: 0;
           color: #212529;
           font-size: 5vw;
-          line-height: 1.75;
+          line-height: 1.5;
           text-align: center;
-          word-break: break-word;
         }
         .url {
           position: absolute;
@@ -31,9 +27,9 @@ const html = () => {
           left: auto;
           bottom: 1em;
           z-index: 1;
-          color: #343a40;
+          color: #868e96;
+          font-family: "Noto Sans CJK JP Light", "Noto Sans JP Light", sans-serif;
           font-size: 2.5vw;
-          font-family: sans-serif;
         }
       </style>
     </head>
