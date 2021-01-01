@@ -31,6 +31,7 @@
     "eslint": "^7.16.0",
     "eslint-plugin-prettier": "^3.3.0",
     "fs-extra": "^9.0.1",
+    "node-font2base64": "^0.7.1",
     "node-html-to-image": "^3.1.0",
     "prettier": "2.2.1"
   }
