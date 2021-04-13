@@ -101,6 +101,8 @@ ignore:
 ## https://www.npmjs.com/package/hexo-generator-seo-friendly-sitemap
 sitemap:
   path: sitemap.xml
+  tag: false
+  category: false
 
 # Feed
 ## https://www.npmjs.com/package/hexo-feed
