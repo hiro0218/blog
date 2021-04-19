@@ -1,15 +1,32 @@
 const utils = require('./modules/utils');
 
+const isIgnoreCategory = (categories) => {
+  let isIgnore = false;
+  const category_name = '名探偵コナン';
+
+  for (let i = 0; i < categories.data.length; i++) {
+    const data = categories.data[i];
+    if (data.name === category_name) {
+      isIgnore = true;
+      break;
+    }
+  }
+
+  return isIgnore;
+};
+
 hexo.extend.generator.register('archives', (locals) => {
   const data = [];
 
   locals.posts.forEach((post) => {
-    data.push({
-      title: post.title,
-      date: post.date,
-      path: post.path,
-      excerpt: utils.getHeadings(post.content),
-    });
+    if (!isIgnoreCategory(post.categories)) {
+      data.push({
+        title: post.title,
+        date: post.date,
+        path: post.path,
+        excerpt: utils.getHeadings(post.content),
+      });
+    }
   });
 
   // sort: 日付順
@@ -27,13 +44,15 @@ hexo.extend.generator.register('recent_posts', (locals) => {
   const data = [];
 
   locals.posts.forEach((post) => {
-    data.push({
-      title: post.title,
-      date: post.date,
-      updated: post.updated,
-      path: post.path,
-      excerpt: utils.getHeadings(post.content),
-    });
+    if (!isIgnoreCategory(post.categories)) {
+      data.push({
+        title: post.title,
+        date: post.date,
+        updated: post.updated,
+        path: post.path,
+        excerpt: utils.getHeadings(post.content),
+      });
+    }
   });
 
   // sort: 更新日付順
