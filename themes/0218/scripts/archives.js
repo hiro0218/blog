@@ -44,15 +44,13 @@ hexo.extend.generator.register('recent_posts', (locals) => {
   const data = [];
 
   locals.posts.forEach((post) => {
-    if (!isIgnoreCategory(post.categories)) {
-      data.push({
-        title: post.title,
-        date: post.date,
-        updated: post.updated,
-        path: post.path,
-        excerpt: utils.getHeadings(post.content),
-      });
-    }
+    data.push({
+      title: post.title,
+      date: post.date,
+      updated: post.updated,
+      path: post.path,
+      excerpt: utils.getHeadings(post.content),
+    });
   });
 
   // sort: 更新日付順
@@ -73,13 +71,15 @@ hexo.extend.generator.register('updates_posts', (locals) => {
   const data = [];
 
   locals.posts.forEach((post) => {
-    data.push({
-      title: post.title,
-      date: post.date,
-      updated: post.updated,
-      path: post.path,
-      excerpt: utils.getHeadings(post.content),
-    });
+    if (!isIgnoreCategory(post.categories)) {
+      data.push({
+        title: post.title,
+        date: post.date,
+        updated: post.updated,
+        path: post.path,
+        excerpt: utils.getHeadings(post.content),
+      });
+    }
   });
 
   // sort: 更新日付順
