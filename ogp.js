@@ -1,7 +1,5 @@
 const fs = require('fs-extra');
 const nodeHtmlToImage = require('node-html-to-image');
-const font2base64 = require('node-font2base64');
-const fontData = font2base64.encodeToDataUrlSync('./font/NotoSansCJKjp-Black.min.woff2');
 
 const ogpImages = [];
 const ogpDirectoryPath = './public/images/ogp';
@@ -9,17 +7,15 @@ const ogpDirectoryPath = './public/images/ogp';
 const html = () => {
   return `<html lang="ja">
     <head>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
       <style>
-        @font-face {
-          font-family: 'NotoSansJP';
-          src: url(${fontData}) format('woff2');
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap');
         body {
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 1em 8vw;
-          font-family: "NotoSansJP", sans-serif;
+          font-family: 'Noto Sans JP', sans-serif;
           font-feature-settings: "palt" 1;
           word-wrap: break-word;
           overflow-wrap: break-word;
@@ -64,6 +60,7 @@ const generateOgpImage = (content) => {
       },
       devtools: false,
     },
+    waitUntil: 'networkidle0',
     beforeScreenshot: () => {
       console.log(
         'OGP Image Generated:',
