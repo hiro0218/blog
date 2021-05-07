@@ -104,23 +104,6 @@ sitemap:
   tag: false
   category: false
 
-# Feed
-## https://www.npmjs.com/package/hexo-feed
-feed:
-  limit: 20
-  order_by: "-date"
-  tag_dir: false
-  category_dir: false
-  rss:
-    enable: true
-    output: "rss.xml"
-  atom:
-    enable: true
-    output: "atom.xml"
-  jsonFeed:
-    enable: true
-    output: "feed.json"
-
 # Robots.txt
 ## https://www.npmjs.com/package/hexo-generator-robotstxt
 robotstxt:
