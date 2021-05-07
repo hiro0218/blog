@@ -5,9 +5,7 @@ const getTerms = (terms) => {
   const data = [];
 
   terms.forEach((term) => {
-    data.push({
-      name: term.name,
-    });
+    data.push(term.name);
   });
 
   return data;
