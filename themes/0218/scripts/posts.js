@@ -7,8 +7,6 @@ const getTerms = (terms) => {
   terms.forEach((term) => {
     data.push({
       name: term.name,
-      slug: term.slug,
-      path: encodeURI(term.path),
     });
   });
 

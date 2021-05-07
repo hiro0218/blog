@@ -5,8 +5,6 @@ hexo.extend.generator.register('categories', (locals) => {
   categories.forEach((category) => {
     data.push({
       name: category.name,
-      slug: category.slug,
-      path: encodeURI(category.path),
       count: category.length,
     });
   });
