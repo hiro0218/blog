@@ -33,10 +33,8 @@ hexo.extend.generator.register('posts', (locals) => {
     data.push({
       title: post.title,
       path: post.path,
-      permalink: encodeURI(post.permalink),
       date: post.date.toDate().toISOString(),
       updated: post.updated.toDate().toISOString(),
-      thumbnail: utils.getThumbnail(post.content),
       content: $('body').html(),
       excerpt: utils.getHeadings(post.content),
       categories: getTerms(post.categories.data),
